@@ -146,6 +146,8 @@
       filter: brightness(0.35) saturate(0.6);
     }
 
+    .hero-photo-sp { display: none; }
+
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -1136,13 +1138,31 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
 
-      /* HERO */
-      .hero { min-height: 100svh; padding-bottom: 80px; }
-      .hero-content { padding: 0 20px; }
+      /* HERO - 写真を img タグで全体表示 */
+      .hero {
+        display: block;
+        height: auto;
+        min-height: 0;
+        padding: 64px 0 0;
+      }
+      .hero-img { display: none; }
+      .hero-overlay { display: none; }
+      .hero-photo-sp {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: brightness(0.55) saturate(0.7);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        padding: 40px 20px 60px;
+        background: linear-gradient(to bottom, var(--navy2), var(--navy));
+      }
       .hero-scroll { display: none; }
-      .hero h1 { font-size: clamp(44px, 12vw, 64px); }
-      .hero-copy { font-size: 14px; }
-      .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero h1 { font-size: clamp(40px, 11vw, 60px); }
+      .hero-copy { font-size: 14px; margin-bottom: 32px; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
       .btn-primary, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
 
       /* COMMON */
@@ -1150,9 +1170,10 @@
       .section-pad { padding: 72px 0; }
       .h2 { font-size: clamp(28px, 8vw, 44px); }
 
-      /* PHILOSOPHY */
-      .philosophy-img { min-height: 280px; height: 280px; }
-      .philosophy-img img { height: 280px; }
+      /* PHILOSOPHY - chaplin.jpg を全体表示 */
+      .philosophy-img { min-height: 0; height: auto; overflow: visible; }
+      .philosophy-img img { height: auto; width: 100%; object-fit: contain; }
+      .philosophy-img-caption { position: static; padding: 8px 16px; }
       .philosophy-text { padding: 40px 20px; }
       .philosophy-quote { font-size: 18px; margin: 24px 0; }
       .philosophy-stats { gap: 24px; flex-wrap: wrap; }
@@ -1164,12 +1185,15 @@
       .service-card-img img { height: 100%; }
       .service-card-body { padding: 28px 20px; }
 
-      /* WORKS */
+      /* WORKS - works-1.jpg を全体表示、他は固定高さ */
       .works-grid { grid-template-columns: 1fr; gap: 12px; }
       .work-card:first-child { grid-column: span 1; }
-      .work-card-img { min-height: 220px; }
-      .work-card:first-child .work-card-img { min-height: 280px; }
-      .work-card:first-child .work-title { font-size: 20px; }
+      .work-card:first-child .work-card-img { min-height: 0; height: auto; overflow: visible; }
+      .work-card:first-child .work-card-img img { height: auto; width: 100%; object-fit: contain; }
+      .work-card:first-child .work-card-overlay { display: none; }
+      .work-card:first-child .work-card-info { position: static; padding: 16px 20px 20px; background: rgba(6,11,24,0.9); }
+      .work-card-img { min-height: 200px; }
+      .work-card:first-child .work-title { font-size: 18px; }
       .works-header { flex-direction: column; align-items: flex-start; gap: 16px; }
 
       /* NEWS */
@@ -1193,9 +1217,7 @@
     }
 
     @media (max-width: 480px) {
-      .hero h1 { font-size: 40px; }
-      .philosophy-img { min-height: 240px; height: 240px; }
-      .philosophy-img img { height: 240px; }
+      .hero h1 { font-size: 36px; }
       .news-item { grid-template-columns: 1fr; gap: 8px; }
       .news-date { font-size: 10px; }
     }
@@ -1241,6 +1263,7 @@
 <div id="top">
   <section class="hero">
     <div class="hero-img"></div>
+    <img class="hero-photo-sp" src="images/hero.jpg" alt="笑い研究所">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Entertainment Research Institute</p>
