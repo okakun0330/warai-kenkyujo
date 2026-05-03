@@ -1052,6 +1052,64 @@
     }
 
     /* ── RESPONSIVE ── */
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(6,11,24,0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 199;
+      padding: 24px 20px 32px;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-drawer.open { display: flex; }
+
+    .nav-drawer a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+      display: block;
+    }
+
+    .nav-drawer a:last-child {
+      border-bottom: none;
+      color: var(--blue-light);
+      margin-top: 8px;
+    }
+
     @media (max-width: 1024px) {
       .container { padding: 0 32px; }
       nav { padding: 0 32px; }
@@ -1073,18 +1131,73 @@
     }
 
     @media (max-width: 768px) {
+      /* NAV */
       nav { padding: 0 20px; height: 64px; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      /* HERO */
+      .hero { min-height: 100svh; padding-bottom: 80px; }
       .hero-content { padding: 0 20px; }
       .hero-scroll { display: none; }
+      .hero h1 { font-size: clamp(44px, 12vw, 64px); }
+      .hero-copy { font-size: 14px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+
+      /* COMMON */
       .container { padding: 0 20px; }
-      .section-pad { padding: 80px 0; }
-      .works-grid { grid-template-columns: 1fr; }
+      .section-pad { padding: 72px 0; }
+      .h2 { font-size: clamp(28px, 8vw, 44px); }
+
+      /* PHILOSOPHY */
+      .philosophy-img { min-height: 280px; height: 280px; }
+      .philosophy-img img { height: 280px; }
+      .philosophy-text { padding: 40px 20px; }
+      .philosophy-quote { font-size: 18px; margin: 24px 0; }
+      .philosophy-stats { gap: 24px; flex-wrap: wrap; }
+      .stat-num { font-size: 32px; }
+
+      /* SERVICES */
+      .services-grid { grid-template-columns: 1fr; gap: 0; }
+      .service-card-img { aspect-ratio: 16/9; }
+      .service-card-img img { height: 100%; }
+      .service-card-body { padding: 28px 20px; }
+
+      /* WORKS */
+      .works-grid { grid-template-columns: 1fr; gap: 12px; }
       .work-card:first-child { grid-column: span 1; }
+      .work-card-img { min-height: 220px; }
+      .work-card:first-child .work-card-img { min-height: 280px; }
+      .work-card:first-child .work-title { font-size: 20px; }
+      .works-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+      /* NEWS */
+      .news-grid { grid-template-columns: 1fr; }
+      .news-item { grid-template-columns: 80px 1fr; padding: 20px 16px; }
+      .news-title { font-size: 13px; }
+
+      /* COMPANY */
+      .company-img-wrap { aspect-ratio: 3/2; }
+      .company-table td { font-size: 13px; }
+      .company-table td:first-child { width: 100px; }
+
+      /* CONTACT */
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
+
+      /* FOOTER */
       footer { padding: 48px 20px 28px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 40px; }
+      .philosophy-img { min-height: 240px; height: 240px; }
+      .philosophy-img img { height: 240px; }
+      .news-item { grid-template-columns: 1fr; gap: 8px; }
+      .news-date { font-size: 10px; }
     }
   </style>
 </head>
@@ -1109,7 +1222,20 @@
     <li><a href="#company">会社概要</a></li>
     <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#about" class="drawer-link">研究所について</a>
+  <a href="#services" class="drawer-link">事業内容</a>
+  <a href="#works" class="drawer-link">実績</a>
+  <a href="#news" class="drawer-link">お知らせ</a>
+  <a href="#company" class="drawer-link">会社概要</a>
+  <a href="#contact" class="drawer-link">お問い合わせ</a>
+</div>
 
 <!-- HERO -->
 <div id="top">
@@ -1636,11 +1762,28 @@
 </footer>
 
 <script>
+  // Contact form
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     this.style.display = 'none';
     document.getElementById('formSuccess').classList.add('show');
     document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('navDrawer');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.drawer-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+    });
   });
 </script>
 
