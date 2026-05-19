@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 株式会社笑い研究所</title>
+  <meta name="description" content="株式会社笑い研究所へのお仕事依頼・ご相談はこちらから。2営業日以内にご返信します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">W.L</div>
+    <div class="nav-logo-text">
+      株式会社笑い研究所
+      <small>WARAI KENKYUJO INC.</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">研究所について</a></li>
+    <li><a href="services.html">事業内容</a></li>
+    <li><a href="works.html">実績</a></li>
+    <li><a href="news.html">お知らせ</a></li>
+    <li><a href="company.html">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="about.html" class="drawer-link">研究所について</a>
+  <a href="services.html" class="drawer-link">事業内容</a>
+  <a href="works.html" class="drawer-link">実績</a>
+  <a href="news.html" class="drawer-link">お知らせ</a>
+  <a href="company.html" class="drawer-link">会社概要</a>
+  <a href="contact.html" class="drawer-link">お問い合わせ</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="label">CONTACT</p>
+    <h1>お問い合わせ</h1>
+    <p class="page-hero-sub">お仕事のご依頼・ご相談はお気軽にどうぞ。2営業日以内にご返信いたします。</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section">
+  <div class="container section-pad">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <p class="label">GET IN TOUCH</p>
+        <h2 class="h2" style="margin-bottom:24px;">お問い合わせ</h2>
+        <p style="font-size:15px; color:var(--gray-light); line-height:2; font-weight:300;">
+          お仕事のご依頼・ご相談はお気軽にどうぞ。<br>
+          2営業日以内にご返信いたします。
+        </p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="contact-info-label">EMAIL</span>
+            <span class="contact-info-value">info@warai-kenkyujo.co.jp</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">TEL</span>
+            <span class="contact-info-value">03-XXXX-XXXX<br><span style="font-size:11px; color:var(--gray);">（平日 10:00〜18:00）</span></span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">SNS</span>
+            <span class="contact-info-value">@warailab（X / Instagram）</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">お名前 <span class="req">*</span></label>
+              <input class="form-input" type="text" placeholder="山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">会社名・屋号</label>
+              <input class="form-input" type="text" placeholder="株式会社○○">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス <span class="req">*</span></label>
+            <input class="form-input" type="email" placeholder="example@mail.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ種別 <span class="req">*</span></label>
+            <select class="form-select" required>
+              <option value="" disabled selected>選択してください</option>
+              <option>放送作家のご依頼</option>
+              <option>SNS企画のご相談</option>
+              <option>イベントプロデュースのご依頼</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容 <span class="req">*</span></label>
+            <textarea class="form-textarea" placeholder="ご依頼・ご相談の内容をご記入ください。" required></textarea>
+          </div>
+          <p class="form-note">
+            送信いただいた個人情報はお問い合わせへの対応にのみ使用し、第三者への提供は行いません。
+          </p>
+          <button type="submit" class="btn-submit">送信する &rarr;</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <p class="form-success-head">MESSAGE SENT</p>
+          <h3>送信が完了しました</h3>
+          <p>お問い合わせありがとうございます。<br>内容を確認のうえ、2営業日以内にご連絡いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <p class="footer-brand-sub">WARAI KENKYUJO INC.</p>
+      <p class="footer-brand-name">株式会社笑い研究所</p>
+      <p class="footer-brand-copy">
+        笑いを科学し、エンタメを届ける。<br>
+        放送・SNS・イベントの三領域で<br>
+        おもしろいを研究・実装しています。
+      </p>
+    </div>
+    <div>
+      <p class="footer-col-title">SERVICES</p>
+      <ul class="footer-col-links">
+        <li><a href="services.html">放送作家</a></li>
+        <li><a href="services.html">SNS企画</a></li>
+        <li><a href="services.html">イベントプロデュース</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">COMPANY</p>
+      <ul class="footer-col-links">
+        <li><a href="about.html">研究所について</a></li>
+        <li><a href="works.html">実績</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="company.html">会社概要</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">CONTACT</p>
+      <ul class="footer-col-links">
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 WARAI KENKYUJO INC. ALL RIGHTS RESERVED.</p>
+    <p class="footer-copy">Est. 2014 &mdash; Tokyo, Japan</p>
+  </div>
+</footer>
+
+<script>
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('navDrawer');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.drawer-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>

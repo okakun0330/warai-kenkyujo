@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>実績 | 株式会社笑い研究所</title>
+  <meta name="description" content="株式会社笑い研究所の実績一覧。放送・SNS・イベントプロデュース。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .works-full-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 16px;
+    }
+
+    @media (max-width: 1024px) {
+      .works-full-grid { grid-template-columns: 1fr 1fr; }
+      .works-full-grid .work-card:first-child { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+      .works-full-grid { grid-template-columns: 1fr; gap: 12px; }
+      .works-full-grid .work-card:first-child { grid-column: span 1; }
+      .works-full-grid .work-card:first-child .work-card-img { min-height: 0; height: auto; overflow: visible; }
+      .works-full-grid .work-card:first-child .work-card-img img { height: auto; width: 100%; object-fit: contain; }
+      .works-full-grid .work-card:first-child .work-card-overlay { display: none; }
+      .works-full-grid .work-card:first-child .work-card-info { position: static; padding: 16px 20px 20px; background: rgba(6,11,24,0.9); }
+      .works-full-grid .work-card:first-child .work-title { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">W.L</div>
+    <div class="nav-logo-text">
+      株式会社笑い研究所
+      <small>WARAI KENKYUJO INC.</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">研究所について</a></li>
+    <li><a href="services.html">事業内容</a></li>
+    <li><a href="works.html" class="active">実績</a></li>
+    <li><a href="news.html">お知らせ</a></li>
+    <li><a href="company.html">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="about.html" class="drawer-link">研究所について</a>
+  <a href="services.html" class="drawer-link">事業内容</a>
+  <a href="works.html" class="drawer-link">実績</a>
+  <a href="news.html" class="drawer-link">お知らせ</a>
+  <a href="company.html" class="drawer-link">会社概要</a>
+  <a href="contact.html" class="drawer-link">お問い合わせ</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="label">WORKS</p>
+    <h1>実績</h1>
+    <p class="page-hero-sub">放送・SNS・イベント、三領域にわたる制作実績の一覧です。</p>
+  </div>
+</section>
+
+<!-- WORKS GRID -->
+<section class="works">
+  <div class="container section-pad">
+    <div class="works-full-grid">
+
+      <div class="work-card" style="grid-row: span 2;">
+        <div class="work-card-img" style="min-height: 500px;">
+          <img
+            src="images/works-1.jpg"
+            alt="SNS企画 パグ"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">SNS / VIRAL CONTENT</p>
+          <h3 class="work-title">動物×コメディのSNSアカウント<br>プロデュース</h3>
+          <p class="work-desc">フォロワー0からの立ち上げ。1年でフォロワー20万人超を達成。</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80"
+            alt="イベント 会場"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">EVENT / LIVE</p>
+          <h3 class="work-title">大型トークライブ プロデュース</h3>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=600&q=80"
+            alt="ラジオ収録"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">BROADCAST / RADIO</p>
+          <h3 class="work-title">人気ラジオ番組 週次構成</h3>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
+            alt="企業イベント"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">EVENT / CORPORATE</p>
+          <h3 class="work-title">大手企業 周年イベント 演出・進行</h3>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80"
+            alt="SNS ショート動画"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">SNS / SHORT DRAMA</p>
+          <h3 class="work-title">ショートドラマシリーズ 企画・構成</h3>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+            alt="フェス・ライブイベント"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">EVENT / FESTIVAL</p>
+          <h3 class="work-title">音楽×お笑いフェス 総合演出</h3>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1585974738771-84483dd9f89f?auto=format&fit=crop&w=600&q=80"
+            alt="テレビ収録"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">BROADCAST / TV</p>
+          <h3 class="work-title">民放バラエティ番組 レギュラー構成</h3>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-img" style="min-height: 240px;">
+          <img
+            src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=600&q=80"
+            alt="SNS マーケティング"
+            loading="lazy"
+          >
+        </div>
+        <div class="work-card-overlay"></div>
+        <div class="work-card-info">
+          <p class="work-tag">SNS / MARKETING</p>
+          <h3 class="work-title">食品ブランド TikTok キャンペーン 企画</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <p class="footer-brand-sub">WARAI KENKYUJO INC.</p>
+      <p class="footer-brand-name">株式会社笑い研究所</p>
+      <p class="footer-brand-copy">
+        笑いを科学し、エンタメを届ける。<br>
+        放送・SNS・イベントの三領域で<br>
+        おもしろいを研究・実装しています。
+      </p>
+    </div>
+    <div>
+      <p class="footer-col-title">SERVICES</p>
+      <ul class="footer-col-links">
+        <li><a href="services.html">放送作家</a></li>
+        <li><a href="services.html">SNS企画</a></li>
+        <li><a href="services.html">イベントプロデュース</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">COMPANY</p>
+      <ul class="footer-col-links">
+        <li><a href="about.html">研究所について</a></li>
+        <li><a href="works.html">実績</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="company.html">会社概要</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">CONTACT</p>
+      <ul class="footer-col-links">
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 WARAI KENKYUJO INC. ALL RIGHTS RESERVED.</p>
+    <p class="footer-copy">Est. 2014 &mdash; Tokyo, Japan</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('navDrawer');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.drawer-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
